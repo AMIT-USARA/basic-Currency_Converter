@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Currency Converter</h1>
+        </div>
+        
+        <hr>
+        <form id="converter-form">
+            <div class="amount">
+                <label for="amount">Enter Amount</label>
+                <input type="number" id="amount" value="100" min="1">
+            </div>
+            <div class="dropdown">
+                <div class="from">
+                    <label>From</label>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/flat/64.png" width="45" height="40" alt="From currency flag">
+                        <select id="from-currency" name="from"></select> 
+                    </div>
+                </div>
+                <button type="button" class="exchange-icon" aria-label="Swap currencies">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+                <div class="to">
+                    <label>To</label>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/IN/flat/64.png" width="45" height="40" alt="To currency flag">
+                        <select id="to-currency" name="to"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="rate-message">1 USD = 83.45 INR</div>
+            <button type="submit" class="convert-btn">Convert Currency</button>
+        </form>
+
+        <div class="results-section">
+            <h2>Conversion Results</h2>
+            <div class="result-card">
+                <div class="result-amount">
+                    <span id="from-amount">100</span>
+                    <span id="from-code">USD</span>
+                </div>
+                <div class="equals-sign">=</div>
+                <div class="result-amount">
+                    <span id="to-amount">8345.00</span>
+                    <span id="to-code">INR</span>
+                </div>
+            </div>
+            <div class="additional-rates">
+                <h3>Other Popular Rates</h3>
+                <div class="rates-grid" id="popular-rates"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
